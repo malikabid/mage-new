@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <!-- <referenceBlock name="main.content">
+        <block  name="top.customnote" template="Cognixia_HeaderNotice::note.phtml"></block>
+    </referenceBlock> -->
+
+    <!-- <move element="breadcrumbs" destination="page.top" before="-" /> -->
+    <!-- <referenceBlock name="breadcrumbs" remove="true" /> -->
+
+    <!-- <referenceBlock name="authorization-link-login" remove="true" /> -->
+    <!-- <referenceBlock name="register-link" remove="true" ifconfig = "customer/create_account/disable_customer_registration" /> -->
+
+</page>
