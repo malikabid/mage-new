@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="around_crumb" type="Cognixia\Breadcrumb\Plugins\Block\Html\Breadcrumbs" sortOrder="1" disabled="false" />
+    </type>
+
+    <!-- <type name="Magento\Theme\Block\Html\Breadcrumbs">
+        <plugin name="before_crumb" type="Cognixia\Breadcrumb\Plugins\Block\Html\Breadcrumbs" sortOrder="1" disabled="false" />
+    </type> -->
+
+    <type name="Magento\Theme\Block\Html\Footer">
+        <plugin name="custom_copyright" type="Cognixia\Breadcrumb\Plugins\Block\Html\ChangeCopyrightInfo" sortOrder="0" />
+    </type>
+
+</config>
