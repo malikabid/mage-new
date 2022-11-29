@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="general">
+        <field name="flavor" sortOrder="30" formElement="input">
+            <settings>
+                <dataType>string</dataType>
+                <label translate="true">Flavor</label>
+            </settings>
+        </field>
+    </fieldset>
+</form>
