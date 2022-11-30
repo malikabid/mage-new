@@ -1,0 +1,14 @@
+<?php
+
+/** @var \Cognixia\Blog\Block\Post\ListPost $block */
+
+$blogs = $this->getPostList();
+?>
+
+<div class="template">
+    <?php foreach ($blogs as $blog) : ?>
+        <h2><?= $blog->getName() ?></h2>
+        <p><?= $blog->getShortDescription() ?></p>
+        <a href="<?= $block->escapeUrl($blog->getUrl() . 'view/id/' . $blog->getId()) ?>">Read More...</a>
+    <?php endforeach; ?>
+</div>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Blog Post</title>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Cognixia\Blog\Block\Post\View" name="cognixia.blog.postview" template="Cognixia_Blog::post/view.phtml" />
+        </referenceContainer>
+    </body>
+</page>
