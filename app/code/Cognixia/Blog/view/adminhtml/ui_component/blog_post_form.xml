@@ -108,5 +108,16 @@
                 <dataScope>short_description</dataScope>
             </settings>
         </field>
+        <field name="post_content" template="ui/form/field" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">post</item>
+                </item>
+            </argument>
+            <settings>
+                <label translate="true">Post Cotnent</label>
+                <dataScope>post_content</dataScope>
+            </settings>
+        </field>
     </fieldset>
 </form>
