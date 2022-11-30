@@ -2,11 +2,11 @@
 
 namespace Cognixia\Blog\Controller\Adminhtml\Post;
 
-class Index extends \Magento\Backend\App\Action
+class NewBlog extends \Magento\Backend\App\Action
 {
-    const ADMIN_RESOURCE = 'Cognixia_Blog::blog_post';
+    const ADMIN_RESOURCE = 'Cognixia_Blog::new';
 
-    const PAGE_TITLE = 'Blog Posts';
+    const PAGE_TITLE = 'Add New Blog';
 
     /**
      * @var \Magento\Framework\View\Result\PageFactory

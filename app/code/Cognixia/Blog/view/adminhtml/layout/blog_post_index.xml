@@ -2,7 +2,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="blog.grid" template="Cognixia_Blog::index.phtml" />
+            <!-- <block name="blog.grid" template="Cognixia_Blog::index.phtml" /> -->
+            <uiComponent name="blog_post_grid" />
         </referenceContainer>
     </body>
 </page>

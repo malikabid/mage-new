@@ -1,0 +1,25 @@
+<?php
+
+/** @var \\Cognixia\ProductList\Block\Products $block */
+?>
+
+<div class="template">
+    <h1><?= $block->getProductCount() ?></h1>
+</div>
+
+<div class="product-list">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>SKU</th>
+            <th>Type</th>
+        </tr>
+        <?php foreach ($this->getProductList() as $product) : ?>
+            <tr>
+                <td><?= $product->getName()?></td>
+                <td><?= $product->getSku()?></td>
+                <td><?= $product->getTypeId()?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
