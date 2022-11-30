@@ -13,7 +13,7 @@
     <settings>
         <buttons>
             <button name="add">
-                <url path="*/*/newblog" />
+                <url path="*/*/new" />
                 <class>primary</class>
                 <label translate="true">Add New Blog</label>
             </button>
@@ -46,25 +46,25 @@
     </dataSource>
 
     <columns name="blog_listing_columns">
-        <selectionsColumn name="ids">
+        <selectionsColumn name="ids" sortOrder="0">
             <settings>
                 <indexField>entity_id</indexField>
             </settings>
         </selectionsColumn>
-
-        <column name="entity_id">
+        <column name="entity_id" sortOrder="10">
             <settings>
                 <filter>textRange</filter>
                 <label translate="true">ID</label>
             </settings>
         </column>
-        <column name="name">
+        <column name="name" sortOrder="20">
             <settings>
                 <filter>text</filter>
                 <label translate="true">Name</label>
+                <sortable>false</sortable>
             </settings>
         </column>
-        <column name="enabled" component="Magento_Ui/js/grid/columns/select">
+        <column name="enabled" component="Magento_Ui/js/grid/columns/select" sortOrder="100">
             <settings>
                 <options class="Cognixia\Blog\Model\Soruce\Enabled" />
                 <filter>select</filter>
@@ -72,7 +72,7 @@
                 <label translate="true">Status</label>
             </settings>
         </column>
-        <actionsColumn name="actions" class="Magento\Cms\Ui\Component\Listing\Column\BlockActions">
+        <actionsColumn name="actions" class="Cognixia\Blog\Ui\Component\Listing\Column\PostActions">
             <settings>
                 <indexField>entity_id</indexField>
             </settings>
