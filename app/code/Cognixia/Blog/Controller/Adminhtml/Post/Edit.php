@@ -4,7 +4,7 @@ namespace Cognixia\Blog\Controller\Adminhtml\Post;
 
 class Edit extends \Magento\Backend\App\Action
 {
-    const ADMIN_RESOURCE = 'Cognixia_Blog::edit';
+    const ADMIN_RESOURCE = 'Cognixia_Blog::save';
 
     const PAGE_TITLE = 'Edit Blog Post';
 
@@ -31,6 +31,22 @@ class Edit extends \Magento\Backend\App\Action
      */
     public function execute()
     {
+
+        $id = $this->getRequest()->getParam('id');
+        $model = $this->_objectManager->create(\Cognixia\Blog\Model\Post::class);
+
+        // 2. Initial checking
+        if ($id) {
+            $model->load($id);
+            if (!$model->getId()) {
+                $this->messageManager->addErrorMessage(__('This post no longer exists.'));
+                /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
+                $resultRedirect = $this->resultRedirectFactory->create();
+                return $resultRedirect->setPath('*/*/');
+            }
+        }
+
+
         /** @var \Magento\Framework\View\Result\Page $resultPage */
         $resultPage = $this->_pageFactory->create();
         $resultPage->setActiveMenu(static::ADMIN_RESOURCE);

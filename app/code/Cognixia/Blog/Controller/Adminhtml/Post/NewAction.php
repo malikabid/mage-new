@@ -18,9 +18,10 @@ class NewAction extends \Magento\Backend\App\Action
      */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $pageFactory
+        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
+
     ) {
-        $this->_pageFactory = $pageFactory;
+        $this->resultForwardFactory = $resultForwardFactory;
         return parent::__construct($context);
     }
 
@@ -32,12 +33,9 @@ class NewAction extends \Magento\Backend\App\Action
     public function execute()
     {
         /** @var \Magento\Framework\View\Result\Page $resultPage */
-        $resultPage = $this->_pageFactory->create();
-        $resultPage->setActiveMenu(static::ADMIN_RESOURCE);
-        $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
-        $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
-
-        return $resultPage;
+        /** @var \Magento\Backend\Model\View\Result\Forward $resultForward */
+        $resultForward = $this->resultForwardFactory->create();
+        return $resultForward->forward('edit');
     }
 
     /**

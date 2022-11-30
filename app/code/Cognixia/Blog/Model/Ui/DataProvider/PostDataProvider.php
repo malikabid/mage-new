@@ -39,33 +39,18 @@ class PostDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             return $this->loadedData;
         }
 
-        $post = $this->getCurrentPost();
-        $this->loadedData[$post->getId()] = $post->getData();
-
-        return $this->loadedData;
-    }
-
-    private function getCurrentPost()
-    {
         $postId = $this->request->getParam('id');
         if ($postId) {
-            try {
-                $post = $this->collection->getFirstItem();
-                $this->loadedData[$post->getId()] = $post->getData();
-            } catch (LocalizedException $exception) {
-                $post = $this->postFactory->create();
-            }
-
-            return $post;
+            $post = $this->collection->getFirstItem();
+            $this->loadedData[$post->getId()] = $post->getData();
         }
 
         $data = $this->dataPersistor->get('blog_post');
-        if (empty($data)) {
-            return $this->postFactory->create();
-        }
-        $this->dataPersistor->clear('blog_post');
 
-        return $this->postFactory->create()
-            ->setData($data);
+        if (!empty($data)) {
+            $this->loadedData[$postId] = $post->getData();
+        }
+
+        return $this->loadedData;
     }
 }
