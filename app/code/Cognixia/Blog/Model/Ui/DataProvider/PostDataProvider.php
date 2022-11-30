@@ -40,9 +40,6 @@ class PostDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         }
 
         $post = $this->getCurrentPost();
-        if (!$post->getData()) {
-            return $post;
-        }
         $this->loadedData[$post->getId()] = $post->getData();
 
         return $this->loadedData;
