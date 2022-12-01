@@ -2,6 +2,8 @@
 
 namespace Cognixia\Blog\Controller\Adminhtml\Post;
 
+use Cognixia\Blog\Model\Post;
+
 class Edit extends \Magento\Backend\App\Action
 {
     const ADMIN_RESOURCE = 'Cognixia_Blog::save';
@@ -13,13 +15,17 @@ class Edit extends \Magento\Backend\App\Action
      */
     protected $_pageFactory;
 
+    protected $postModel;
+
     /**
      * @param \Magento\Backend\App\Action\Context $context
      */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $pageFactory
+        \Magento\Framework\View\Result\PageFactory $pageFactory,
+        Post $postModel
     ) {
+        $this->postModel = $postModel;
         $this->_pageFactory = $pageFactory;
         return parent::__construct($context);
     }
@@ -33,12 +39,11 @@ class Edit extends \Magento\Backend\App\Action
     {
 
         $id = $this->getRequest()->getParam('id');
-        $model = $this->_objectManager->create(\Cognixia\Blog\Model\Post::class);
 
         // 2. Initial checking
         if ($id) {
-            $model->load($id);
-            if (!$model->getId()) {
+            $this->postModel->load($id);
+            if (!$this->postModel->getId()) {
                 $this->messageManager->addErrorMessage(__('This post no longer exists.'));
                 /** \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
                 $resultRedirect = $this->resultRedirectFactory->create();
