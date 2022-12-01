@@ -16,9 +16,9 @@
 
     <settings>
         <buttons>
-            <button name="save" class="Magento\Cms\Block\Adminhtml\Page\Edit\SaveButton" />
-            <button name="delete" class="Magento\Cms\Block\Adminhtml\Page\Edit\DeleteButton" />
-            <button name="back" class="Magento\Cms\Block\Adminhtml\Page\Edit\BackButton" />
+            <button name="save" class="Cognixia\Blog\Block\Adminhtml\Post\Edit\SaveButton" />
+            <!-- <button name="delete" class="Magento\Cms\Block\Adminhtml\Page\Edit\DeleteButton" />
+            <button name="back" class="Magento\Cms\Block\Adminhtml\Page\Edit\BackButton" /> -->
         </buttons>
         <namespace>blog_post_form</namespace>
         <dataScope>data</dataScope>

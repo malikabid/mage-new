@@ -4,7 +4,7 @@ namespace Cognixia\Blog\Controller\Adminhtml\Post;
 
 class NewAction extends \Magento\Backend\App\Action
 {
-    const ADMIN_RESOURCE = 'Cognixia_Blog::new';
+    const ADMIN_RESOURCE = 'Cognixia_Blog::save';
 
     const PAGE_TITLE = 'Add New Blog';
 
@@ -32,7 +32,6 @@ class NewAction extends \Magento\Backend\App\Action
      */
     public function execute()
     {
-        /** @var \Magento\Framework\View\Result\Page $resultPage */
         /** @var \Magento\Backend\Model\View\Result\Forward $resultForward */
         $resultForward = $this->resultForwardFactory->create();
         return $resultForward->forward('edit');
