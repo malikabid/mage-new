@@ -3,8 +3,10 @@
 /** @var \Cognixia\Blog\Block\Post\ListPost $block */
 
 $blogs = $this->getPostList();
-?>
 
+$config = $this->getConfigurations();
+?>
+<h1><?= $config ?></h1>
 <div class="template">
     <?php foreach ($blogs as $blog) : ?>
         <h2><?= $blog->getName() ?></h2>
