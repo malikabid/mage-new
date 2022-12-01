@@ -32,7 +32,7 @@ class Save extends \Magento\Backend\App\Action
     public function execute()
     {
 
-        $data = $this->getRequest()->getParams();
+        $data = $this->getRequest()->getPostValue();
 
         if ($data) {
             $model = $this->_objectManager->create(\Cognixia\Blog\Model\Post::class);
@@ -53,7 +53,7 @@ class Save extends \Magento\Backend\App\Action
         $resultRedirect = $this->resultRedirectFactory->create();
 
 
-        $resultRedirect->setPath('*/edit', ['id' => $id, '_current' => true]);
+        $resultRedirect->setPath('*/*/edit', ['id' => $id, '_current' => true]);
 
         return $resultRedirect;
     }
