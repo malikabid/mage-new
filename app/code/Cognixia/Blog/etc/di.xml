@@ -13,4 +13,6 @@
             <argument name="resourceModel" xsi:type="string">\Cognixia\Blog\Model\ResourceModel\Post</argument>
         </arguments>
     </virtualType>
+
+    <preference for="Cognixia\Blog\Api\PostRepositoryInterface" type="Cognixia\Blog\Model\Api\PostRepository" />
 </config>
