@@ -47,13 +47,25 @@ class DisableRegistrationPluginTest extends TestCase
     //     $this->assertFalse($result);
     // }
 
-    public function testAfterIsAllowed()
+    public function testIsRegistrationDisabledBasedOnConfig()
     {
         $this->scopeConfigInterface->expects($this->once())->method('isSetFlag')
             ->with(DisableRegistration::XML_PATH_DISABLE_CUSTOMER_REGISTRATION, ScopeInterface::SCOPE_STORE)
             ->will($this->returnValue(true));
 
         $this->assertFalse((bool)$this->plugin->afterIsAllowed(
+            $this->mockCustomerRegistrationModel,
+            true
+        ));
+    }
+
+    public function testIsRegistrationEnabledBasedOnConfig()
+    {
+        $this->scopeConfigInterface->expects($this->once())->method('isSetFlag')
+            ->with(DisableRegistration::XML_PATH_DISABLE_CUSTOMER_REGISTRATION, ScopeInterface::SCOPE_STORE)
+            ->will($this->returnValue(false));
+
+        $this->assertTrue((bool)$this->plugin->afterIsAllowed(
             $this->mockCustomerRegistrationModel,
             true
         ));
