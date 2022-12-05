@@ -8,7 +8,7 @@ use Magento\Customer\Model\Registration;
 use Magento\TestFramework\ObjectManager;
 use Magento\TestFramework\Interception\PluginList;
 
-class DisableRegistrationTest extends TestCase
+class DisableRegistrationPluginIntegrationTest extends TestCase
 {
     public function testDisableRegistrionPluginExist()
     {
