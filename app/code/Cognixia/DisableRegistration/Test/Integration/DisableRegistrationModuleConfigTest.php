@@ -19,8 +19,10 @@ class DisableRegistrationModuleConfigTest extends TestCase
 
     public function testTheModuleIsConfiguredAndEnabled()
     {
+        /** @var ObjectManager $objectManager */
         $objectManager = ObjectManager::getInstance();
 
+        /** @var ModuleList $moduleList */
         $moduleList = $objectManager->create(ModuleList::class);
 
         $isModuleListed = $moduleList->has($this->modulename);
