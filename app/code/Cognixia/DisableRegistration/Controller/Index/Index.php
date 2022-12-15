@@ -2,22 +2,25 @@
 
 namespace Cognixia\DisableRegistration\Controller\Index;
 
+use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\Controller\Result\Redirect as RedirectResult;
 use Magento\Framework\Controller\Result\RedirectFactory as RedirectResultFactory;
 use Cognixia\DisableRegistration\Model\Exception\RequiredArgumentMissingException;
 
 class Index extends \Magento\Framework\App\Action\Action
 {
-    /**
-     * @var \Magento\Framework\View\Result\PageFactory
-     */
+    /** @var PageFactory */
     protected $_pageFactory;
 
     /** @var RedirectResultFactory */
     private $redirectResultFactory;
 
     /**
+     * Constructor function
+     *
      * @param \Magento\Framework\App\Action\Context $context
+     * @param \Magento\Framework\View\Result\PageFactory $pageFactory
+     * @param \stdClass $useCase
      */
     public function __construct(
         \Magento\Framework\App\Action\Context $context,
@@ -30,6 +33,7 @@ class Index extends \Magento\Framework\App\Action\Action
 
         return parent::__construct($context);
     }
+
     /**
      * View page action
      *
@@ -42,7 +46,7 @@ class Index extends \Magento\Framework\App\Action\Action
             $this->processRequestAndRedirect();
     }
 
-    /** @return @return \Magento\Framework\Controller\ResultInterface | RedirectResult */
+    /** @return \Magento\Framework\Controller\ResultInterface | RedirectResult */
     private function processRequestAndRedirect()
     {
         try {
@@ -62,10 +66,13 @@ class Index extends \Magento\Framework\App\Action\Action
         return $redirect;
     }
 
+    /** @return boolean */
     private function isPostRequest(): bool
     {
         return $this->getRequest()->getMethod() === 'POST';
     }
+
+    /** @return \Magento\Framework\Controller\ResultInterface */
     private function getBadRequestResult()
     {
         $result = $this->_pageFactory->create();
@@ -73,6 +80,7 @@ class Index extends \Magento\Framework\App\Action\Action
         return $result;
     }
 
+    /** @return \Magento\Framework\Controller\ResultInterface */
     private function getMethodNotAllowedResult()
     {
         $result = $this->_pageFactory->create();
