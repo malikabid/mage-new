@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Asoft\DiConfig\Model\Config\Data\Virtual"
+        type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="cacheId" xsi:type="string">asoft_unitmap_config</argument>
+            <argument name="reader" xsi:type="object">Asoft\DiConfig\Model\Config\Data\Reader</argument>
+        </arguments>
+    </virtualType>
+</config>
