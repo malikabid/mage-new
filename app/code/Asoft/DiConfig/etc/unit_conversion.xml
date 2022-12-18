@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<conversion_map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Asoft_DiConfig:etc/unit_conversion.xsd">
+    <unit id="mg" type="weight">
+        <conversion to="g" factor="0.001000" />
+        <conversion to="kg" factor="0.000001" />
+        <conversion to="lbs" factor="0.00000220462257811" />
+    </unit>
+    <unit id="g" type="weight">
+        <conversion to="mg" factor="1000" />
+        <conversion to="kg" factor="0.001" />
+        <conversion to="lbs" factor="0.00220462257811" />
+    </unit>
+    <unit id="lbs" type="weight">
+        <conversion to="mg" factor="453592.379" />
+        <conversion to="g" factor="453.592379" />
+        <conversion to="kg" factor="0.453592379" />
+    </unit>
+    <unit id="kg" type="weight">
+        <conversion to="mg" factor="1000000" />
+        <conversion to="g" factor="1000" />
+        <conversion to="lbs" factor="2.20462257811" />
+    </unit>
+    <unit id="ml" type="fluid">
+        <conversion to="l" factor="0.001" />
+    </unit>
+    <unit id="l" type="fluid">
+        <conversion to="ml" factor="1000" />
+    </unit>
+    <unit id="mm" type="distance">
+        <conversion to="cm" factor="0.1" />
+        <conversion to="in" factor="0.0393700787402" />
+        <conversion to="m" factor="0.001" />
+    </unit>
+    <unit id="cm" type="distance">
+        <conversion to="mm" factor="10" />
+        <conversion to="in" factor="0.393700787402" />
+        <conversion to="m" factor="0.01" />
+    </unit>
+    <unit id="in" type="distance">
+        <conversion to="mm" factor="25.4" />
+        <conversion to="cm" factor="2.54" />
+        <conversion to="m" factor="0.0254" />
+    </unit>
+    <unit id="m" type="distance">
+        <conversion to="mm" factor="1000" />
+        <conversion to="cm" factor="100" />
+        <conversion to="in" factor="39.3700787402" />
+    </unit>
+</conversion_map>

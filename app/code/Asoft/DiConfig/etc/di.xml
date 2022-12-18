@@ -8,4 +8,30 @@
             <argument name="reader" xsi:type="object">Asoft\DiConfig\Model\Config\Data\Reader</argument>
         </arguments>
     </virtualType>
+
+    <virtualType name="Asoft\DiConfig\Model\Config\UnitConversion\Virtual"
+        type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="cacheId" xsi:type="string">asoft_unitconversion_map_config</argument>
+            <argument name="reader" xsi:type="object">
+                Asoft\DiConfig\Model\Config\UnitConversion\Reader\Virtual</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Asoft\DiConfig\Model\Config\UnitConversion\Reader\Virtual"
+        type="Magento\Framework\Config\Reader\Filesystem">
+        <arguments>
+            <argument name="fileName" xsi:type="string">unit_conversion.xml</argument>
+            <argument name="schemaLocator" xsi:type="object">
+                Asoft\DiConfig\Model\Config\UnitConversion\SchemaLocator\Virtual</argument>
+        </arguments>
+    </virtualType>
+
+    <virtualType name="Asoft\DiConfig\Model\Config\UnitConversion\SchemaLocator\Virtual"
+        type="Magento\Framework\Config\GenericSchemaLocator">
+        <arguments>
+            <argument name="moduleName" xsi:type="string">Asoft_DiConfig</argument>
+            <argument name="schema" xsi:type="string">unit_conversion.xsd</argument>
+        </arguments>
+    </virtualType>
 </config>
