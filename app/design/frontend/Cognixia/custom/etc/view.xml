@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+*/
+-->
+<view xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/view.xsd">
+    <media>
+        <images module="Magento_Catalog">
+            <!--image size in list view -->
+            <image id="category_page_list" type="small_image">
+                <width>280</width>
+                <height>360</height>
+            </image>
+
+            <!--image size in grid view -->
+            <image id="category_page_grid" type="small_image">
+                <width>300</width>
+                <height>450</height>
+            </image>
+
+            <!--main product image size in product page -->
+            <image id="product_page_image_medium" type="image">
+                <width>500</width>
+                <height>500</height>
+            </image>
+
+            <!--gallery thumbnail image size in product page -->
+            <image id="product_page_image_small" type="thumbnail">
+                <width>120</width>
+                <height>140</height>
+            </image>
+        </images>
+    </media>
+</view>
