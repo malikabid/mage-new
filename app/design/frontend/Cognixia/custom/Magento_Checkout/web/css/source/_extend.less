@@ -1,0 +1,22 @@
+// & when (@media-common =true) {
+//     .minicart-wrapper {
+//         .lib-dropdown(@_dropdown-toggle-icon-content: @icon-pointer-down;
+//             @_dropdown-toggle-active-icon-content: @icon-pointer-up,
+//         )
+//     }
+// }
+
+
+.minicart-wrapper {
+    .action.showcart {
+        &:before {
+            content: @icon-comment;
+        }
+    }
+
+    .action.showcart.active {
+        &:before {
+            content: @icon-pointer-up;
+        }
+    }
+}
