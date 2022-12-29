@@ -1,0 +1,60 @@
+<?php
+
+/** @var \\Cognixia\ProductList\Block\Products $block */
+?>
+
+<!-- <div class="template">
+    <h1><?= $block->getProductCount() ?></h1>
+</div> -->
+
+<div class="product-list">
+    <?php if ($block->getProductCount()) : ?>
+
+        <!-- <div data-mage-init='{"carousel":
+            {
+                "loop": true, 
+                "nav": true,
+                "items":5,
+                "navText":[
+                    "<<",
+                    ">>"
+                    ]
+            }
+            }' class="owl-carousel owl-theme"> -->
+        <div id="slider" class="owl-carousel owl-theme">
+            <?php foreach ($this->getProductList() as $product) : ?>
+                <div class="item">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <img src="<?= $product->getImage() ?>" />
+                        </div>
+                        <h2 class="product_name">
+                            <?= $product->getName() ?>
+                        </h2>
+                        <div class="product_info">
+                            <?= $product->getSku() ?>
+                            <?= $product->getTypeId() ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "#slider": {
+            "carousel": {
+                "loop":true,
+                "margin":10,
+                "nav":true,
+                "items":5,
+                "navText":[
+                    "<<",
+                    ">>"
+                    ]
+            }
+        }
+    }
+</script>
