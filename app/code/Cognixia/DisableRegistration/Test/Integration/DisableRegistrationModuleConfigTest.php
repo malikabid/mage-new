@@ -28,4 +28,22 @@ class DisableRegistrationModuleConfigTest extends TestCase
         $isModuleListed = $moduleList->has($this->modulename);
         $this->assertTrue($isModuleListed);
     }
+
+    public function testTheModuleIsConfiguredAndEnabledInRealEnvironment()
+    {
+        /** @var ObjectManager $objectManager */
+        $objectManager = ObjectManager::getInstance();
+
+        $dirList = $objectManager->create(\Magento\Framework\App\Filesystem\DirectoryList::class, ['root' => BP]);
+
+        $configReader = $objectManager->create(\Magento\Framework\App\DeploymentConfig\Reader::class, ['dirList' => $dirList]);
+        $deploymentConfig = $objectManager->create(\Magento\Framework\App\DeploymentConfig::class, ['reader' => $configReader]);
+
+
+        /** @var ModuleList $moduleList */
+        $moduleList = $objectManager->create(ModuleList::class, ['config' => $deploymentConfig]);
+
+        $isModuleListed = $moduleList->has($this->modulename);
+        $this->assertTrue($isModuleListed);
+    }
 }
